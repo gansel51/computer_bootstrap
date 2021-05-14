@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "/Users/griffinansel/.pyenv/versions/3.7.8/bin/python"
+    "python.pythonPath": "/Users/griffinansel/.pyenv/versions/3.7.8/bin/python",
+    "python.testing.promptToConfigure": false,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false
 }
