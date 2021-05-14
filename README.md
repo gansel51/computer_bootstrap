@@ -2,11 +2,11 @@
 
 This repository is the host to my current computer's set up. It contains a bash script to install tools, packages, and applications I find useful to have on my personal machine.
 
-# Compatibility
+## Compatibility
 
 This script is only compatible with MacOS, as it leverages Homebrew, a platform specific tool. It installs and globalizes Python 3.7.8, though that is easily editable to your preferred version.
 
-# How to Use This Script
+## How to Use This Script
 
 To use this script, you're going to have to download the "computer_bootstrap" file. When you do, you'll have to change directory to the location to where you put the download, most likely by `cd Downloads`.
 
