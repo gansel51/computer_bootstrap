@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
-
-
 echo "Starting bootstrapping"
-
-
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Homebrew if Homebrew isn't installed
-
 if test ! $(which brew); then
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -20,7 +15,6 @@ brew update
 
 # Installing pyenv dependencies to improve script performance
 brew install openssl readline sqlite3 xz zlib
-
 
 PACKAGES=(
     git
@@ -54,5 +48,16 @@ CASKS=(
 echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
 
+echo "Setting up pyenv and virtualenv inits..."
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-echo "Bootstrapping complete"
+echo "Installing global aliases..."
+alias -g whatsmyip="curl ifconfig.me"
+alias -g goback="cd .."
+alias -g rss="exec "$SHELL""
+alias -g awake="caffeinate -s"
+
+exec "$SHELL"
+
+echo "Bootstrapping complete!"
