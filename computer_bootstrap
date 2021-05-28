@@ -52,6 +52,12 @@ echo "Setting up pyenv and virtualenv inits..."
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+echo "Installing global aliases..."
+alias -g whatsmyip="curl ifconfig.me"
+alias -g goback="cd .."
+alias -g rss="exec "$SHELL""
+alias -g awake="caffeinate -s"
+
 exec "$SHELL"
 
 echo "Bootstrapping complete!"
