@@ -46,7 +46,7 @@ CASKS=(
 )
 
 echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+brew install ${CASKS[@]} --cask
 
 echo "Setting up pyenv and virtualenv inits..."
 eval "$(pyenv init -)"
