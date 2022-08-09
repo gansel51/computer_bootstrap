@@ -32,8 +32,8 @@ echo "Cleaning up..."
 brew cleanup
 
 echo "Installing Python..."
-pyenv install 3.7.8
-pyenv global 3.7.8
+pyenv install 3.9.13
+pyenv global 3.9.13
 
 echo "Installing cask..."
 brew install caskroom/cask/brew-cask
@@ -47,6 +47,7 @@ CASKS=(
 
 echo "Installing cask apps..."
 brew install ${CASKS[@]} --cask
+brew install thefuck
 
 echo "Setting up pyenv and virtualenv inits..."
 eval "$(pyenv init -)"
@@ -56,7 +57,17 @@ echo "Installing global aliases..."
 alias -g whatsmyip="curl ifconfig.me"
 alias -g goback="cd .."
 alias -g rss="exec "$SHELL""
-alias -g awake="caffeinate -s"
+alias -g awake="caffeinate -d"
+
+eval $(thefuck --alias oops)
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PS1='($(pyenv version-name))'$PS1
 
 exec "$SHELL"
 
