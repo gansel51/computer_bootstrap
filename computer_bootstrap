@@ -48,6 +48,7 @@ CASKS=(
 echo "Installing cask apps..."
 brew install ${CASKS[@]} --cask
 brew install thefuck
+brew install zsh-autosuggestions
 
 echo "Setting up pyenv and virtualenv inits..."
 eval "$(pyenv init -)"
@@ -68,6 +69,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 export PS1='($(pyenv version-name))'$PS1
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 exec "$SHELL"
 
