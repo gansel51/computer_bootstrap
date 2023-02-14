@@ -4,7 +4,7 @@ This repository is the host to my current computer's set up. It contains a bash 
 
 ## Compatibility
 
-This script is only compatible with MacOS, as it leverages Homebrew, a platform specific tool. It installs and globalizes Python 3.7.8, though that is easily editable to your preferred version.
+This script is only compatible with operating systems that can run Homebrew. It installs and globalizes Python 3.9.13, though that is easily editable to your preferred version.
 
 ## How to Use This Script
 
